@@ -1,8 +1,9 @@
 import React from 'react';
+import Calculator from '../Containers/Calculator';
 
 const App = () => {
   return (
-    <div />
+    <Calculator />
   );
 };
 

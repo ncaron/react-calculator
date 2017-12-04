@@ -5,6 +5,7 @@ import { createStore } from 'redux';
 import reducer from './reducer';
 import App from './Components/App';
 import 'reset-css';
+import './styles.scss';
 
 const store = createStore(reducer);
 
