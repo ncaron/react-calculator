@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CalcHeader from '../Components/CalcHeader';
 import Screen from '../Components/Screen';
-import Buttons from '../Components/Buttons';
+import Buttons from './Buttons';
 
 class Calculator extends Component {
   constructor(props) {
