@@ -10,6 +10,11 @@ class Calculator extends Component {
     super(props);
   }
 
+  componentDidUpdate() {
+    const screen = document.getElementById('screen');
+    screen.scrollTo(screen.scrollWidth, 0);
+  }
+
   render() {
     return (
       <div className="calculator">

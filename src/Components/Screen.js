@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Screen = ({currentDisplay, fullOP}) => {
   return (
-    <div className="screen">
+    <div className="screen" id="screen">
       <p className="currentDisplay">{currentDisplay}</p>
       <p className="fullOP">{fullOP}</p>
     </div>
