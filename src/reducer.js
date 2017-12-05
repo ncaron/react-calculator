@@ -8,6 +8,8 @@ export default function reducer(state = initialState, action) {
 
   switch(action.type) {
     case types.DIGIT_CLICK: {
+      // If an operation has already been performed and user clicks on a digit
+      // instead of OP, resets the state.
       if (newState.lastPressed === '=') {
         newState = JSON.parse(JSON.stringify(initialState));
       }
@@ -21,6 +23,7 @@ export default function reducer(state = initialState, action) {
         newState.currentDisplay += action.value;
       }
 
+      // Makes sure you can't enter multiple 0 as first digit.
       if (newState.currentDisplay !== '0' || newState.fullOP[newState.fullOP.length - 1] !== '0') {
         newState.fullOP += action.value;
       }
@@ -55,6 +58,13 @@ export default function reducer(state = initialState, action) {
     case types.OP_CLICK: {
       if (newState.lastPressed === '=') {
         newState.fullOP = newState.digits[0];
+      } else if (newState.lastPressed === '.') {
+        newState.currentDisplay += '0';
+        newState.fullOP += '0';
+        newState.lastPressed = '0';
+      } else if (newState.lastPressed === '') {
+        newState.fullOP += '0';
+        newState.lastPressed = '0';
       }
 
       if (OPS.test(newState.lastPressed)) {
@@ -80,11 +90,14 @@ export default function reducer(state = initialState, action) {
     case types.EQUAL: {
       if (newState.lastPressed === '=') {
         return state;
+      } else if (newState.lastPressed === '.') {
+        newState.currentDisplay += '0';
+        newState.fullOP += '0';
       }
 
       newState.digits.push(Number(newState.currentDisplay));
 
-      let equals = newState.digits.shift() || newState.currentDisplay;
+      let equals = newState.digits.shift();
 
       newState.ops.forEach((op) => {
         const num = newState.digits.shift();
@@ -100,7 +113,11 @@ export default function reducer(state = initialState, action) {
         }
       });
 
-      equals = Math.round(equals * 100) / 100;
+      if (equals === Infinity) {
+        return JSON.parse(JSON.stringify(initialState));
+      }
+
+      equals = Math.round(equals * 10000) / 10000;
       newState.currentDisplay = String(equals);
       newState.ops = [];
       newState.digits = [equals];
@@ -110,7 +127,7 @@ export default function reducer(state = initialState, action) {
     }
 
     case types.CLEAR: {
-      if (DIGITS.test(newState.lastPressed)) {
+      if (DIGITS.test(newState.lastPressed) || newState.lastPressed === '.') {
         newState.fullOP = newState.fullOP.replace(/[0-9.]+$/, '');
         newState.currentDisplay = '0';
       } else if (OPS.test(newState.lastPressed)) {
