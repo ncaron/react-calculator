@@ -3,6 +3,7 @@
 * { box-sizing: border-box; }
 
 body {
+  background: #888;
   font-family: 'Orbitron', sans-serif;
   margin-top: 150px;
 }
@@ -19,8 +20,8 @@ body {
     "header header header header"
     "screen screen screen screen"
     "buttons buttons buttons buttons";
-    border-radius: 10px;
-  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 15px 15px 30px 5px #191818, 0 0 50px 5px #191818, -5px -5px 10px #888 inset;
 }
 
 .calculatorShake { animation: shake .2s 10; }
@@ -50,7 +51,7 @@ body {
 .screen {
   background: #baba9a;
   overflow: auto;
-  padding: 5px;
+  padding: 5px 10px;
   margin: 15px 0;
   grid-area: screen;
   display: grid;
@@ -60,6 +61,7 @@ body {
     "fullOP";
   text-align: right;
   border-radius: 10px;
+  box-shadow: 0 0 10px 5px #88886b inset;
 
   &::-webkit-scrollbar {
     background-color: #6e6e59;
