@@ -114,7 +114,7 @@ export default function reducer(state = initialState, action) {
       });
 
       // Violently shakes if user tries to divide by 0.
-      if (equals === Infinity || equals === -Infinity) {
+      if (equals === Infinity || equals === -Infinity || isNaN(equals)) {
         const buttons = document.getElementsByTagName('button');
 
         for (let i = 0; i < buttons.length; i++) {
