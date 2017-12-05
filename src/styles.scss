@@ -5,7 +5,7 @@
 body {
   background: #888;
   font-family: 'Orbitron', sans-serif;
-  margin-top: 150px;
+  margin-top: 50px;
 
   @media(max-width: 450px) {
     margin-top: 0;
@@ -188,3 +188,13 @@ body {
 .seven { grid-area: seven; }
 .eight { grid-area: eight; }
 .nine { grid-area: nine; }
+
+.footer {
+  margin-top: 50px;
+  text-align: center;
+
+  a {
+    color: #590d0d;
+    font-weight: bold;
+  }
+}
