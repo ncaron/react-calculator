@@ -7,7 +7,7 @@ import { buttonClick } from '../actions';
 
 const buttons = [
   { name: 'AC', value: 'ac', class: 'allClear' },
-  { name: 'C', value: 'c', class: 'clear' },
+  { name: 'CE', value: 'c', class: 'clear' },
   { name: '÷', value: '/', class: 'div' },
   { name: 'x', value: '*', class: 'mult' },
   { name: '+', value: '+', class: 'add' },
