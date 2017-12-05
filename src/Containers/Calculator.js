@@ -17,7 +17,7 @@ class Calculator extends Component {
 
   render() {
     return (
-      <div className="calculator">
+      <div className="calculator" id="calculator">
         <CalcHeader />
         <Screen currentDisplay={ this.props.currentDisplay } fullOP={ this.props.fullOP } />
         <Buttons />

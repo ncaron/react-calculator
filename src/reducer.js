@@ -113,7 +113,24 @@ export default function reducer(state = initialState, action) {
         }
       });
 
-      if (equals === Infinity) {
+      // Violently shakes if user tries to divide by 0.
+      if (equals === Infinity || equals === -Infinity) {
+        const buttons = document.getElementsByTagName('button');
+
+        for (let i = 0; i < buttons.length; i++) {
+          buttons[i].disabled = true;
+        }
+
+        document.getElementById('calculator').classList.add('calculatorShake');
+
+        setTimeout(() => {
+          for (let i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = false;
+          }
+
+          document.getElementById('calculator').classList.remove('calculatorShake');
+        }, 2000);
+
         return JSON.parse(JSON.stringify(initialState));
       }
 
