@@ -14,7 +14,7 @@ class Calculator extends Component {
     return (
       <div className="calculator">
         <CalcHeader />
-        <Screen currentResult={ this.props.currentResult } fullOP={ this.props.fullOP } />
+        <Screen currentDisplay={ this.props.currentDisplay } fullOP={ this.props.fullOP } />
         <Buttons />
       </div>
     );
@@ -22,7 +22,7 @@ class Calculator extends Component {
 }
 
 Calculator.propTypes = {
-  currentResult: PropTypes.string.isRequired,
+  currentDisplay: PropTypes.string.isRequired,
   fullOP: PropTypes.string.isRequired
 };
 

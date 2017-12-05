@@ -1,5 +1,5 @@
 export default {
-  currentResult: '0',
+  currentDisplay: '0',
   ops: [],
   digits: [],
   lastPressed: '',

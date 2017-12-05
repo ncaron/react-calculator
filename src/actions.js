@@ -10,6 +10,12 @@ export function buttonClick(e) {
     type = types.OP_CLICK;
   } else if (value === '=') {
     type = types.EQUAL;
+  } else if (value === 'ac') {
+    type = types.ALL_CLEAR;
+  } else if (value === 'c') {
+    type = types.CLEAR;
+  } else if (value === '.') {
+    type = types.DOT;
   }
 
   return {

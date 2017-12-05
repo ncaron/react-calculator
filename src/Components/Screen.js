@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Screen = ({currentResult, fullOP}) => {
+const Screen = ({currentDisplay, fullOP}) => {
   return (
     <div className="screen">
-      <p className="currentResult">{currentResult}</p>
+      <p className="currentDisplay">{currentDisplay}</p>
       <p className="fullOP">{fullOP}</p>
     </div>
   );
 };
 
 Screen.propTypes = {
-  currentResult: PropTypes.string.isRequired,
+  currentDisplay: PropTypes.string.isRequired,
   fullOP: PropTypes.string.isRequired
 };
 
