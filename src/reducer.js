@@ -122,6 +122,7 @@ export default function reducer(state = initialState, action) {
         }
 
         document.getElementById('calculator').classList.add('calculatorShake');
+        document.getElementById('error').classList.add('errorFade');
 
         setTimeout(() => {
           for (let i = 0; i < buttons.length; i++) {
@@ -129,6 +130,7 @@ export default function reducer(state = initialState, action) {
           }
 
           document.getElementById('calculator').classList.remove('calculatorShake');
+          document.getElementById('error').classList.remove('errorFade');
         }, 2000);
 
         return JSON.parse(JSON.stringify(initialState));

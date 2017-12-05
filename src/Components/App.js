@@ -1,9 +1,13 @@
 import React from 'react';
 import Calculator from '../Containers/Calculator';
+import Error from '../Components/Error';
 
 const App = () => {
   return (
-    <Calculator />
+    <div>
+      <Error />
+      <Calculator />
+    </div>
   );
 };
 
