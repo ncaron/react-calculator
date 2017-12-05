@@ -38,7 +38,11 @@ body {
     "screen screen screen screen"
     "buttons buttons buttons buttons";
   border-radius: 10px;
-  box-shadow: 15px 15px 30px 5px #191818, 0 0 50px 5px #191818, -5px -5px 10px #888 inset;
+  box-shadow:
+    15px 15px 30px 5px #191818,
+    0 0 50px 5px #191818,
+    -5px -5px 10px #888 inset,
+    3px 3px 10px #888 inset;
 }
 
 .calculatorShake { animation: shake .2s 10; }
